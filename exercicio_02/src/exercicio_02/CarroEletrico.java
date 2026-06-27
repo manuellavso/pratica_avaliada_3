@@ -30,18 +30,14 @@ public class CarroEletrico extends Carro{
 	@Override
 	public int acelerar(int valorAceleracao) {
 
+		//CALCULAR CONSUMO
 	    Validacao.validarAceleracao(valorAceleracao);
+	    int consumoBateria = valorAceleracao /consumoPorAceleracao;
 
-	    int consumoBateria = (int) Math.ceil(valorAceleracao / (double) consumoPorAceleracao);
-
+	    //CALCULAR NOVO NÍVEL DA BATERIA APOS ACELERAR
 	    Validacao.validarConsumoBateria(consumoBateria, nivelBateria);
-
-	    // 🔒 SÓ ALTERA ESTADO DEPOIS DE TUDO PASSAR
-	    int novaBateria = nivelBateria - consumoBateria;
-
-	    Validacao.validarNivelBateria(novaBateria);
-
-	    nivelBateria = novaBateria;
+	    Validacao.validarNivelBateria(nivelBateria);
+	    nivelBateria -= consumoBateria;
 
 	    return super.acelerar(valorAceleracao);
 	}

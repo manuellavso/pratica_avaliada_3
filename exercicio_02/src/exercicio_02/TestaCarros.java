@@ -14,7 +14,8 @@ public class TestaCarros {
 		
 	}
 	/*Observação: não deixei todos com System.err.println pois o STS estava bugando e misturando tudo, 
-	o que fazia a formatação sair errada no console (pulando linha e não aparecendo no lugar certo)*/
+	o que fazia a formatação sair errada no console (pulando linha e não aparecendo no lugar certo),
+	isso ocorre quando se usa muitos sysout com o system.err*/
 	
 	//CARRO ELÉTRICO VÁLIDO
 	static void carroEletrico() {
